@@ -22,7 +22,7 @@ book.displayInfo(); // "Title: BookName1, Author: Author1, Pages: 123" */
 
     correctPageNumber(pages) {
         if (pages <= 0 || pages > 3000 || (pages % 1) !== 0) {
-            throw new Error("Вы ввели некорректное число страниц.")
+            throw new Error("Вы ввели некорректное число страниц.");
         } else {
             return;
         }
@@ -46,16 +46,16 @@ class Book {
         this.author = author;
         
         if (pages <= 0 || pages > 3000 || !Number.isInteger(pages)) {
-            throw new Error("Вы ввели некорректное число страниц.")
-        };
+            throw new Error("Вы ввели некорректное число страниц.");
+        }
         
         this.pages = pages;   
-    };
+    }
 
     displayInfo() {
         console.log(`Название произведения: "${this.title}", Автор: ${this.author}, ${this.pages} стр.`);
-    };
-};
+    }
+}
 
 const bookOne = new Book("Мастер и Маргарита", "М.А. Булгаков", 495);
 bookOne.displayInfo();
@@ -79,18 +79,17 @@ class Student {
         this.name = name;
 
         if (age <= 0 || age > 150) {
-            throw new Error("Не верю!")
-        };
+            throw new Error("Не верю!");
+        }
         
         this.age = age;
         this.grade = grade;
-
-    };
+    }
 
     displayInfo() {
         console.log(`Имя: ${this.name}, Возраст: ${this.age}, Класс: ${this.grade}`);
-    };
-};
+    }
+}
 
 const studentOne = new Student("Иван Иванов", 13, "5 класс");
 studentOne.displayInfo();
