@@ -13,8 +13,8 @@ getUserData использует fetch для получения данных о
 
 Работа должна быть выполнена с API: https://reqres.in/ */
 
-/* async function getUserData(ID) {
-    const response = await fetch(`https://reqres.in/api/users?page=2&id=${ID}`);
+async function getUserData(ID) {
+    const response = await fetch(`https://reqres.in/api/users/${ID}`);
 
     if (!response.ok) {
         throw new Error ('Error, user not found')   
@@ -35,7 +35,7 @@ getUserData(123).then((user) => console.log(user.data));
 
 async function getUserData(ID) {
     try {
-        const response = await fetch(`https://reqres.in/api/users?page=2&id=${ID}`);
+        const response = await fetch(`https://reqres.in/api/users/${ID}`);
 
         if (response.ok) {
             const user = await response.json();
@@ -54,7 +54,7 @@ getUserData(9);
 getUserData(10);
 getUserData(11);
 getUserData(12);
-getUserData(123); */
+getUserData(123);
 
 /* Задание 2. Отправка данных на сервер.
 
@@ -115,11 +115,9 @@ saveUserData(user)
   });
 
   
-
-
 // 2 вариант:
 
-/* const user = {
+const user = {
     "name": "John Doe",
     "job": "unknown"
 };
@@ -150,4 +148,4 @@ saveUserData(user)
   })
   .catch(error => {
     console.log(error.message);
-  }); */
+  });
